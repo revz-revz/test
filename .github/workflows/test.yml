@@ -10,4 +10,6 @@ jobs:
           echo "HTTPS Proxy: $https_proxy"
           echo "HTTP Proxy: $http_proxy"
           echo "No Proxy: $no_proxy"
+          curl -v -x http://proxyuser:password@localhost:3128 httpbin.org/ip
+          curl -v -x http://proxyuser:password123@localhost:3128 httpbin.org/ip
           curl -v https://httpbin.org/ip
