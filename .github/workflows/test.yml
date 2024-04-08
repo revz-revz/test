@@ -6,4 +6,8 @@ jobs:
   test:
     runs-on: [self-hosted]
     steps:
-      - run: echo 10s
+      - run: |
+          echo "HTTPS Proxy: $https_proxy"
+          echo "HTTP Proxy: $http_proxy"
+          echo "No Proxy: $no_proxy"
+          curl -v https://httpbin.org/ip
