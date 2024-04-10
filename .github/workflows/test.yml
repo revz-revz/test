@@ -22,4 +22,4 @@ jobs:
       - name: ok2312
         continue-on-error: true
         run: |
-          curl -v -x http://user1:password@localhost:3128 httpbin.org/ip
+          curl -v -x http://proxyuser:proxypassword@localhost:3128 httpbin.org/ip
