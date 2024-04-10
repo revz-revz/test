@@ -7,10 +7,10 @@ jobs:
     runs-on: [self-hosted]
     steps:
       - run: |
-          curl -v https://httpbin.org/ip
+          curl -svk https://httpbin.org/ip
 
       - run: |
-          curl -v -x http://proxyuser:password123@localhost:3128 httpbin.org/ip
+          curl -svk -x http://proxyuser:password123@localhost:3128 httpbin.org/ip
 
       - name: ok
         continue-on-error: true
@@ -18,8 +18,4 @@ jobs:
           echo "HTTPS Proxy: $https_proxy"
           echo "HTTP Proxy: $http_proxy"
           echo "No Proxy: $no_proxy"
-
-      - name: ok2312
-        continue-on-error: true
-        run: |
-          curl -v -x http://proxyuser:proxypassword@localhost:3128 httpbin.org/ip
+          curl -sv httpbin.org/ip
