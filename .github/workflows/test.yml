@@ -7,10 +7,10 @@ jobs:
     runs-on: [self-hosted]
     steps:
       - run: |
-          curl -svk https://httpbin.org/ip
+          curl -sv http://httpbin.org/ip
 
       - run: |
-          curl -svk -x http://proxyuser:password123@localhost:3128 httpbin.org/ip
+          curl -sv -x http://proxyuser:password123@localhost:3128 httpbin.org/ip
 
       - name: ok
         continue-on-error: true
